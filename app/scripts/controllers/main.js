@@ -15,7 +15,7 @@ angular.module('jsTestApp')
       $scope.loading = true;
       var promise = $gallery.getGallery(search);
       promise.then(function (data) {
-        $scope.photos = data;
+        $scope.photos = data.data.photos.photo;
         console.log($scope.photos);
       }
       );

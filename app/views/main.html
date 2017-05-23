@@ -11,8 +11,8 @@
     </form>
   </div>
 
-<h1>{{photos.photo}}</h1>
+<h1>{{photos.id}}</h1>
 </div>
 <div class="container-fluid">
-  <div class="img-responsive" ng-repeat="photo in photos.photo"><img ng-src="http://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_s.jpg"></div>
+  <div class="col-xs-1" ng-repeat="photo in photos"><img ng-src="http://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_s.jpg"></div>
 </div>
