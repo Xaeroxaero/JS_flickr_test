@@ -8,17 +8,9 @@
  * Controller of the jsTestApp
  */
 angular.module('jsTestApp')
-  .controller('MainCtrl', ['$scope', '$gallery', function ($scope, $gallery) {
-    $scope.photos = [];
-    $scope.text = '';
-    $scope.search = function (search) {
-      $scope.loading = true;
-      var promise = $gallery.getGallery(search);
-      promise.then(function (data) {
-        $scope.photos = data.data.photos.photo;
-        console.log($scope.photos);
-      }
-      );
-    };
+  .controller('MainCtrl', ['$scope', '$search', function ($scope, $search) {
+      $scope.search = function (search) {
+        $search.doSearch(search);
+      };
   }]
   );

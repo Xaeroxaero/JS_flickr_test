@@ -24,7 +24,7 @@ angular
       .state('photo',{
         name: 'photo',
         url: '/photo/:id',
-        templateUrl: 'views/photo',
-        controller:'PhotoCtrl'
+        templateUrl: 'views/photo.html',
+        controller:'MainCtrl'
       });
   });

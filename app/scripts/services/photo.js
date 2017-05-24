@@ -11,7 +11,6 @@ angular.module('jsTestApp')
   .service('$gallery', ['$http', function ($http) {
     var API_key = '9d5b9be285c23f890257a6beed09df05';
     var service_url = 'https://api.flickr.com/services/rest/';
-    var perPage =  150;
     this.getGallery = function (search) {
       var params = {
         api_key: API_key,
