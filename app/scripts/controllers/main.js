@@ -40,5 +40,6 @@ angular.module('jsTestApp')
       };
 
       $scope.init();
+
   }]
   );
