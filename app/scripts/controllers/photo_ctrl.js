@@ -16,9 +16,8 @@ angular.module('jsTestApp')
             $scope.photo = photo;
             var promise = $exif.getEXIF($scope.photo.id, $scope.photo.secret);
             promise.then(function (data) {
-              $scope.exif = data.data.photo.exif;
-              console.log($scope.exif);
-              return $scope.photo;
+              $scope.exifs = data.data.photo.exif;
+              console.log($scope.exifs);
             });
           }
         }
