@@ -19,10 +19,10 @@ angular.module('jsTestApp')
               $scope.exif = data.data.photo.exif;
               console.log($scope.exif);
               return $scope.photo;
-            })
+            });
           }
         }
-      )
+      );
     }
 
     $scope.init = function () {
