@@ -25,6 +25,6 @@ angular
         name: 'photo',
         url: '/photo/:id',
         templateUrl: 'views/photo.html',
-        controller:'MainCtrl'
+        controller:'PhotoCtrl'
       });
   });

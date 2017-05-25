@@ -8,38 +8,16 @@
  * Controller of the jsTestApp
  */
 angular.module('jsTestApp')
-  .controller('MainCtrl', ['$scope', '$gallery','$stateParams', function ($scope, $gallery, $stateParams) {
+  .controller('MainCtrl', ['$scope', '$gallery', '$stateParams', '$data_save', function ($scope, $gallery, $stateParams, $data_save) {
 
-    function setSinglePhoto(id) {
-      $scope.photos.forEach(function (photo) {
-        console.log(Number(id));
-        if (id === photo.id) {
-          $scope.photo = photo;
-          console.log(photo)
-        }
-      });
-    }
-
-
-    $scope.id = [];
-    $scope.photos = [];
-    $scope.text = '';
-    $scope.search = function (search) {
-      var promise = $gallery.getGallery(search);
-      promise.then(function (data) {
-        $scope.photos = data.data.photos.photo;
-        // console.log($scope.photos);
-        // console.log($scope.photos.id);
-        // console.log($stateParams)
-      }
-      );
-    };
-      $scope.init = function () {
-        // console.log($stateParams.id);
-        setSinglePhoto($stateParams.id)
+      $scope.search = function (search) {
+        var promise = $gallery.getGallery(search);
+        promise.then(function (data) {
+            $scope.photos = data.data.photos.photo;
+            $data_save.save($scope.photos);
+          }
+        );
       };
 
-      $scope.init();
-
-  }]
+    }]
   );
