@@ -3,10 +3,14 @@
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.16.0.
 
-## Build & development
+## Requirements
 
-Run `grunt` for building and `grunt serve` for preview.
+npm install gulp
+npm install bower
+npm install connect-modrewrite 
+bower install 
 
 ## Testing
 
-Running `grunt test` will run the unit tests with karma.
+Run `gulp start:client` for preview.
+

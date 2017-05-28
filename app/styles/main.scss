@@ -2,3 +2,19 @@ input {
   width: 100%;
 }
 
+.col-xs-1 {
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+}
+
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.image {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
