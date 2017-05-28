@@ -8,17 +8,16 @@
  * Controller of the jsTestApp
  */
 angular.module('jsTestApp')
-  .controller('PhotoCtrl', ['$scope', '$data_save', '$stateParams', '$exif', function ($scope, $data_save, $stateParams, $exif) {
-
+  .controller('PhotoCtrl', ['$scope', '$data_save', '$stateParams', '$exif', '$state', function ($scope, $data_save, $stateParams, $exif, $state) {
     function setSinglePhoto(id) {
       $scope.photos.forEach(function (photo) {
           if (id === photo.id) {
             $scope.photo = photo;
             var promise = $exif.getEXIF($scope.photo.id, $scope.photo.secret);
-            promise.then(function (data) {
+            promise.then(function success(data) {
               $scope.exifs = data.data.photo.exif;
-              console.log($scope.exifs);
-            });
+              }
+            );
           }
         }
       );
@@ -26,7 +25,12 @@ angular.module('jsTestApp')
 
     $scope.init = function () {
       $scope.photos = $data_save.getData();
-      setSinglePhoto($stateParams.id);
+      if ($scope.photos === undefined){
+        $state.go('home');
+      }
+      else {
+        setSinglePhoto($stateParams.id);
+      }
     };
 
     $scope.init();

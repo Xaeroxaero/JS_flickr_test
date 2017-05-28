@@ -8,7 +8,7 @@ var lazypipe = require('lazypipe');
 var rimraf = require('rimraf');
 var wiredep = require('wiredep').stream;
 var runSequence = require('run-sequence');
-
+var modRewrite = require('connect-modrewrite');
 
 var yeoman = {
   app: require('./bower.json').appPath || 'app',
@@ -32,7 +32,7 @@ var paths = {
   karma: 'karma.conf.js',
   views: {
     main: yeoman.app + '/index.html',
-    files: [yeoman.app + '/views/**/*.html']
+    files: [yeoman.app + '/views/*.html']
   }
 };
 
@@ -79,9 +79,16 @@ gulp.task('start:server', function() {
     root:['./.tmp', yeoman.app],
     livereload:true,
     port: 9000,
-    middleware:function(connect, opt){
-      return [['/bower_components',
-        connect["static"]('./bower_components')]]
+    middleware: function (connect) {
+      return [
+        modRewrite(['^[^\\.]*$ /index.html [L]']),
+        connect.static('.tmp'),
+        connect().use(
+          '/bower_components',
+          connect.static('./bower_components')
+        ),
+        connect.static('app')
+      ];
     }
   });
 });

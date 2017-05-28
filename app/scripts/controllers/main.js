@@ -12,12 +12,16 @@ angular.module('jsTestApp')
 
       $scope.search = function (search) {
         var promise = $gallery.getGallery(search);
-        promise.then(function (data) {
+        promise.then(function success(data) {
             $scope.photos = data.data.photos.photo;
             $data_save.save($scope.photos);
           }
         );
       };
-
-    }]
+      $scope.init = function () {
+        $scope.search(null);
+      };
+      $scope.init();
+    }
+    ]
   );

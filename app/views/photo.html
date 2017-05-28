@@ -4,7 +4,10 @@
 <div class="container-fluid">
   <div class="table-responsive">
     <table class="table">
-      <tr>{{exifs}}</tr>
+      <tr ng-repeat="x in exifs">
+        <td>{{x.label}}</td>
+        <td>{{x.raw._content}}</td>
+      </tr>
     </table>
   </div>
 </div>

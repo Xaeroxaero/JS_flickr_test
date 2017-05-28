@@ -15,4 +15,5 @@ angular.module('jsTestApp')
     this.getData = function () {
       return this.photos;
     };
-  });
+  }
+  );
