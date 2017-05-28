@@ -15,7 +15,7 @@ angular.module('jsTestApp')
             $scope.photo = photo;
             var promise = $exif.getEXIF($scope.photo.id, $scope.photo.secret);
             promise.then(function success(data) {
-              $scope.exifs = data.data.photo.exif;
+                $scope.exifs = data.data.photo.exif;
               }
             );
           }
@@ -25,7 +25,7 @@ angular.module('jsTestApp')
 
     $scope.init = function () {
       $scope.photos = $data_save.getData();
-      if ($scope.photos === undefined){
+      if ($scope.photos === undefined) {
         $state.go('home');
       }
       else {

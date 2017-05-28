@@ -9,11 +9,11 @@
  */
 angular.module('jsTestApp')
   .service('$data_save', function () {
-    this.save = function (photos) {
-      this.photos = photos;
-    };
-    this.getData = function () {
-      return this.photos;
-    };
-  }
+      this.save = function (photos) {
+        this.photos = photos;
+      };
+      this.getData = function () {
+        return this.photos;
+      };
+    }
   );

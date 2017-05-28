@@ -21,11 +21,11 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .state('photo',{
+      .state('photo', {
         name: 'photo',
         url: '/photo/:id',
         templateUrl: 'views/photo.html',
-        controller:'PhotoCtrl'
+        controller: 'PhotoCtrl'
       });
   });
 

@@ -18,9 +18,6 @@ angular.module('jsTestApp')
         nojsoncallback: 1,
         method: (search !== null && search.length > 0) ? 'flickr.photos.search' : 'flickr.photos.getRecent'
       };
-      if ((search !== null && search.length > 0)) {
-        params.text = search;
-      }
       return $http({method: 'GET', url: service_url, params: params});
     };
   }]);

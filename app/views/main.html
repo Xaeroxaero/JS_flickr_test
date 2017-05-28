@@ -1,14 +1,15 @@
 <div class="container-fluid">
-<div class="row search">
-  <div class="col-xs-4">
-    <input class="form-control" placeholder="search" ng-model="text">
-    <button type="button" class="btn btn-default" ng-click="search(text)">Search</button>
+  <div class="row search">
+    <div class="col-xs-4">
+      <input class="form-control" placeholder="search" ng-model="text">
+      <button type="button" class="btn btn-default" ng-click="search(text)">Search</button>
+    </div>
   </div>
-</div>
 </div>
 <div class="container-fluid">
   <div class="row">
-  <div class="col-xs-1" ng-repeat="photo in photos" ><a ui-sref="photo({id:photo.id})"><img class="img-responsive"
-    ng-src="http://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_s.jpg"></a></div>
+    <div class="col-xs-1" ng-repeat="photo in photos"><a ui-sref="photo({id:photo.id})"><img class="img-responsive"
+                                                                                             ng-src="http://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_s.jpg"></a>
+    </div>
   </div>
 </div>
