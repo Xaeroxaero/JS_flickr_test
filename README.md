@@ -9,8 +9,8 @@ git clone https://github.com/Xaeroxaero/JS_flickr_test.git
 
 Run in project directory using command line:
 
-npm install 
-bower install 
+`npm install` 
+`bower install` 
 
 ## Testing
 
